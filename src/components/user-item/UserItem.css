@@ -1,0 +1,9 @@
+.user-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-bottom: 20px;
+  background-color: black;
+  border-radius: 20px;
+  padding: 10px;
+}
