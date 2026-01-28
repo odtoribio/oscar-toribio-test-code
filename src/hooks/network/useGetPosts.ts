@@ -1,37 +1,24 @@
-import {useState} from 'react'
-import type { TUser } from './types';
-
-const  API_URL = 'https://jsonplaceholder.typicode.com'
+import { useState, useEffect } from 'react'
+import useFetch from './useFetch';
+import type { TPost } from './types';
+const  API_URL = import.meta.env.VITE_API_URL;
 
 const useGetPosts = () => {
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
+  const [userId, setUserId] = useState<number | null>(null);
+  const { data: posts, loading, error, request } = useFetch<TPost[]>(`${API_URL}/posts?userId=${userId}`, { method: 'GET'});
 
-  const request = async (id: number): Promise<TUser[] | undefined> => {
-    setLoading(true);
-
-    try {
-      const response = await fetch(`${API_URL}/posts?userId=${id}`, {
-        method: 'GET'
-      });
-
-      if(!response.ok) {
-        throw new Error(`Request error. Code status: ${response.status}`);
-      };
-
-
-      const result = await response.json();
-      return result;
-
-    } catch (error) {
-      console.error({error})
-      setError(true);
-    } finally {
-      setLoading(false)
+  useEffect(() => {
+    if(userId !== null){
+      request()
     }
-  }
 
-  return {loading, error, request}
+  }, [userId, request]);
+
+  const getPost = (id: number) => {
+    setUserId(id);
+  }
+  
+  return {data: posts || [], loading, error, getPost}
 }
 
 export default useGetPosts;
