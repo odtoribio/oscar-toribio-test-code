@@ -6,7 +6,7 @@ const Layout = () => {
   return (
     <>
       <h1 onClick={() => navigate('/')}>User Intelligence Platform</h1>
-      <main>
+      <main className='main-container'>
         <Outlet />
       </main>
     </>

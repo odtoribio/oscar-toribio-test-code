@@ -1,0 +1,13 @@
+.post-container {
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  width: 500px;
+  gap: 10px;
+}
+
+.item {
+  background-color: rgb(70, 70, 70);
+  border-radius: 25px;
+  padding: 25px;
+}
