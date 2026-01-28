@@ -8,12 +8,12 @@ type UserProps = {
 
 const UserItem = ({ users }: UserProps) => {
 
-  const { request: getPosts } = useGetPosts();
+  const { data: posts, getPost } = useGetPosts();
 
   if (users.length === 0) return [];
   
   const handleUserClick = async (id: number) => {
-    const posts = await getPosts(id);
+    getPost(id);
     console.log({posts})
   }
 
@@ -22,7 +22,9 @@ const UserItem = ({ users }: UserProps) => {
       {users.map((user) => (
         <div className='user-container' key={user.id} onClick={() => handleUserClick(user.id)}>
           <label>USUARIO: {user.username}</label>
+          <span>|</span>
           <label>EMAIL: {user.email}</label>
+          <span>|</span>
           <label>CIUDAD: {user.address.city}</label>
         </div>
       ))}

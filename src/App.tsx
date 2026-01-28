@@ -1,29 +1,17 @@
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import './App.css';
 import useGetUsers from './hooks/network/useGetUsers';
-import type { TUser } from './hooks/network/types';
 import UserItem from './components/user-item/UserItem';
 
 function App() {
-  const [users, setUsers] = useState<TUser[]>([]);
-
-  const { loading, request: getUsers } = useGetUsers();
-
+  const { data: users, loading, getUsers } = useGetUsers();
   useEffect(() => {
-    const fetchData = async () => {
-
-      const users = await getUsers();
-      if(users){
-        setUsers(users!)
-      }
-    }
-    fetchData();
-  }, []);
-
+    getUsers();
+  }, [getUsers]);
 
   return (
     <>
-      <h1>User List</h1>
+      <h1>User Intelligence Platform</h1>
       <div className="card">
         {loading ? <p>Cargando usuarios...</p> : <UserItem users={users}/>}
       </div>

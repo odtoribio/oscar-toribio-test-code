@@ -1,39 +1,12 @@
-import {useState} from 'react'
+import useFetch from './useFetch';
 import type { TUser } from './types';
 
-const  API_URL = 'https://jsonplaceholder.typicode.com'
+const  API_URL = import.meta.env.VITE_API_URL;
 
 const useGetUsers = () => {
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
-
-  const request = async (): Promise<TUser[] | undefined> => {
-    setLoading(true);
-
-    try {
-      const response = await fetch(`${API_URL}/users`, {
-        method: 'GET'
-      });
-
-      if(!response.ok) {
-        throw new Error(`Request error. Code status: ${response.status}`);
-      };
-
-
-      const result = await response.json();
-      console.log({result})
-
-      return result;
-
-    } catch (error) {
-      console.error({error})
-      setError(true);
-    } finally {
-      setLoading(false)
-    }
-  }
-
-  return {loading, error, request}
+  const { data: users, loading, error, request: getUsers } = useFetch<TUser[]>(`${API_URL}/users`, { method: 'GET'});
+  const data = users || [];
+  return {data, loading, error, getUsers}
 }
 
 export default useGetUsers;
