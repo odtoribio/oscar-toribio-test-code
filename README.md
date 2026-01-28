@@ -1,4 +1,4 @@
-# React + TypeScript + Vite
+# User Intelligence Platform
 
 This aplication uses Vite as a build tool and pnpm as package manager.
 
