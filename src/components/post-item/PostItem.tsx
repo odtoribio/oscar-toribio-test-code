@@ -1,5 +1,6 @@
 import type { TPost } from '../../hooks/network/types';
 import './PostItem.css';
+import Item from './partial/Item';
 
 type Props = {
   posts: TPost[]
@@ -10,12 +11,7 @@ const PostItem = ({posts}: Props) => {
     <div className='post-container'>
       {
         posts.map(post => {
-          return (
-            <div className='item' key={post.id}>
-              <h3>{post.title}</h3>
-              <p>{post.body}</p>
-            </div>
-          )
+          return <Item post={post}/>
         })
       }
     </div>

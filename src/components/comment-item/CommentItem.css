@@ -1,0 +1,12 @@
+.comment-item-container {
+  max-height: 200px;
+  overflow-y: scroll;
+  border: 2px solid gray;
+  border-radius: 15px;
+  background-color: rgb(91, 89, 89);
+}
+
+hr {
+  width: 100%;
+  border: 2px solid gray;
+}
