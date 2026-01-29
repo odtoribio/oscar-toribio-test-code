@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import type { TUser } from '../../hooks/network/types'
+import { PATHS_DYNAMIC } from "../../routes/app-routes";
 import './UserItem.css';
 
 type UserProps = {
@@ -12,19 +13,18 @@ const UserItem = ({ users }: UserProps) => {
   if (users.length === 0) return [];
   
   const handleUserClick = async (user: TUser) => {
-    navigate(`/posts/user/${user.id}`);
+    navigate(PATHS_DYNAMIC.USER(user.id));
   }
 
   return (
     <>
+      <p>User names:</p>
       {users.map((user) => (
-        <div className='user-container' key={user.id} onClick={() => handleUserClick(user)}>
-          <label>USERNAME: {user.username}</label>
-          <span>|</span>
-          <label>EMAIL: {user.email}</label>
-          <span>|</span>
-          <label>CITY: {user.address.city}</label>
-        </div>
+        <>
+          <div className='item-container' key={user.id} onClick={() => handleUserClick(user)}>
+            <p>{user.name}</p>
+          </div>
+        </>
       ))}
     </>
 

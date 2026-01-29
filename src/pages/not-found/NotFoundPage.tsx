@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import './NotFound.css'
 
-const NotFound = () => {
+const NotFoundPage = () => {
   const navigate = useNavigate();
   return (
     <div className="not-found-container">
@@ -13,4 +13,4 @@ const NotFound = () => {
   )
 }
 
-export default NotFound
+export default NotFoundPage

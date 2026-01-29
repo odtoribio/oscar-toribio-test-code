@@ -11,7 +11,7 @@ const PostItem = ({posts}: Props) => {
     <div className='post-container'>
       {
         posts.map(post => {
-          return <Item post={post}/>
+          return <Item post={post} key={post.id}/>
         })
       }
     </div>
