@@ -4,3 +4,12 @@
   background-color: rgb(85, 85, 85);
   padding: 2em;
 }
+
+.search-input {
+  width: 80%;
+  margin-bottom: 20px;
+  height: 30px;
+  border-radius: 10px;
+  border: none;
+  padding-left: 10px;
+}

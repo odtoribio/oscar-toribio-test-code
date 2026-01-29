@@ -1,4 +1,4 @@
-.user-container {
+.item-container {
   display: flex;
   flex-direction: row;
   gap: 10px;
@@ -8,11 +8,11 @@
   padding: 10px 20px;
 }
 
-.user-container * {
+.item-container * {
   cursor: pointer;
 }
 
-.user-container:hover {
+.item-container:hover {
   background-color: rgb(14, 14, 14);
-  /* border-color: rgb(54, 54, 54); */
+  cursor: pointer;
 }

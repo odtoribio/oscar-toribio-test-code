@@ -4,7 +4,7 @@ import useGetUsers from '../../hooks/network/useGetUsers';
 import useGetPosts from '../../hooks/network/useGetPosts';
 import PostItem from '../../components/post-item';
 
-const Posts = () => {
+const PostsPage = () => {
   const { id: userId } = useParams();
 
   const { data: users, loading: loadingUsers, error: userError, getUsers } = useGetUsers();
@@ -31,10 +31,10 @@ const Posts = () => {
 
   return (
     <>
-      <h2>{`${foundUser?.username}'s Posts List`}</h2>
+      <h2>{`${foundUser?.name}'s Posts List`}</h2>
       <PostItem posts={posts}/>
     </>
   )
 }
 
-export default Posts
+export default PostsPage

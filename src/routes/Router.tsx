@@ -1,17 +1,20 @@
 import {Routes, Route} from 'react-router-dom';
 import Layout from './Layout';
-import Home from '../pages/home';
-import Posts from '../pages/posts';
-import NotFound from '../pages/not-found';
+import HomePage from '../pages/home';
+import PostsPage from '../pages/posts';
+import NotFoundPage from '../pages/not-found';
+import UserPage from '../pages/user';
+import { PATHS } from './app-routes';
 
 const Router = () => {
   return (
     <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Home />}/>
-        <Route path="/posts/user/:id" element={<Posts />}/>
+      <Route path={PATHS.HOME} element={<Layout />}>
+        <Route index element={<HomePage />}/>
+        <Route path={PATHS.POSTS} element={<PostsPage />}/>
+        <Route path={PATHS.USER} element={<UserPage />}/>
       </Route>
-      <Route path="*" element={<NotFound />}/>
+      <Route path="*" element={<NotFoundPage />}/>
     </Routes>
   )
 }

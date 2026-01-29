@@ -3,7 +3,7 @@ import UserItem from '../../components/user-item/UserItem'
 import useGetUsers from '../../hooks/network/useGetUsers';
 import './Home.css'
 
-const Home = () => {
+const HomePage = () => {
   const { data: users, loading, getUsers } = useGetUsers();
 
   useEffect(() => {
@@ -20,4 +20,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default HomePage
