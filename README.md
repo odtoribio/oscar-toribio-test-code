@@ -1,7 +1,7 @@
 # User Intelligence Platform
 User posts platform, this app allows fetch jsonplaceholder users, add users to favorites in local storage and see their posts and comments
 
-If you wanto to see the the app live [visit this url](https://oscar-toribio-test-code-bm0acutbk-oscar-toribios-projects.vercel.app/)
+If you wanto to see the the app live [visit this url](https://oscar-toribio-test-code.vercel.app/)
 ## Tech Stack
 - **Frontend:** React 19+
 - **Styles:** Flexbox
