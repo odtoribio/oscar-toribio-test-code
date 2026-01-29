@@ -31,14 +31,16 @@ const Item = ({user}: ItemProps) => {
   return (
     <div className='item-container' onClick={() => handleUserClick(user)}>
       <p>{user.name}</p>
-      <div className='checkbox-container' onClick={(e) => e.stopPropagation()}>
+      <div className='checkbox-container'>
         <label>Favorite:</label>
-        <input 
-          type='checkbox'
-          value="fav"
-          checked={isFavorite}
-          onChange={handleChecked}
-        />
+        <div onClick={(e) => e.stopPropagation()}>
+          <input 
+            type='checkbox'
+            value="fav"
+            checked={isFavorite}
+            onChange={handleChecked}
+          />
+        </div>
       </div>
     </div>
   )

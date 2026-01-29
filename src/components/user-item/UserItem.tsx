@@ -8,7 +8,7 @@ type UserProps = {
 
 const UserItem = ({ users }: UserProps) => {
   
-  if (users.length === 0) return [];
+  if (users.length === 0) return <p>Not user found</p>;
 
   return (
     <>

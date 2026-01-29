@@ -1,26 +1,27 @@
 import { BarChart } from '@mui/x-charts/BarChart';
 import {LineChart, lineElementClasses} from '@mui/x-charts/LineChart'
+import Box from '@mui/material/Box';
 import './Dashboard.css';
 
 const DashboardPage = () => {
   return (
-    <div>
+    <div className='dashboard-wrapper'>
       <div className='dashboard-container'>
         <p>New users last week:</p>
-        <BarChart 
-          xAxis={[{
-            id: 'barCategories',
-            data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-            height: 28,
-          }]}
-          series={[
-            {
-              data: [24, 67, 13, 67, 46, 29, 53],
-            },
-          ]}
-          height={200}
-          width={500}
-        />
+        <Box sx={{ width: 'auto' }}>
+          <BarChart 
+            xAxis={[{
+              id: 'barCategories',
+              data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+              height: 28,
+            }]}
+            series={[
+              {
+                data: [24, 67, 13, 67, 46, 29, 53],
+              },
+            ]}
+          />
+      </Box>
       </div>
       <div className='dashboard-container'>
         <p>All users:</p>
