@@ -20,11 +20,9 @@ const UserItem = ({ users }: UserProps) => {
     <>
       <p>User names:</p>
       {users.map((user) => (
-        <>
-          <div className='item-container' key={user.id} onClick={() => handleUserClick(user)}>
-            <p>{user.name}</p>
-          </div>
-        </>
+        <div className='item-container' key={user.id} onClick={() => handleUserClick(user)}>
+          <p>{user.name}</p>
+        </div>
       ))}
     </>
 
