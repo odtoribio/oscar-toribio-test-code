@@ -8,6 +8,7 @@ const Layout = () => {
     <>
       <h1 onClick={() => navigate('/')}>User Intelligence Platform</h1>
       <button className="go-home-btn" onClick={() => navigate(PATHS_DYNAMIC.HOME)}>Go Home</button>
+      <button className="go-home-btn" onClick={() => navigate(PATHS_DYNAMIC.FAVORITES)}>Favorites</button>
       <main className='main-container'>
         <Outlet />
       </main>
