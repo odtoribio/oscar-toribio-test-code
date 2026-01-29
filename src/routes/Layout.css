@@ -14,3 +14,7 @@ h1:hover {
   flex-direction: column;
   align-items: center;
 }
+
+.go-home-btn {
+  margin-bottom: 20px;
+}
