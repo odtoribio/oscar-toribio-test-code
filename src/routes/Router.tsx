@@ -5,6 +5,7 @@ import PostsPage from '../pages/posts';
 import NotFoundPage from '../pages/not-found';
 import UserPage from '../pages/user';
 import FavoritesPage from '../pages/favorites/FavoritesPage';
+import DashboardPage from '../pages/dashboard';
 import { PATHS } from './app-routes';
 
 const Router = () => {
@@ -15,6 +16,7 @@ const Router = () => {
         <Route path={PATHS.POSTS} element={<PostsPage />}/>
         <Route path={PATHS.USER} element={<UserPage />}/>
         <Route path={PATHS.FAVORITES} element={<FavoritesPage />}/>
+        <Route path={PATHS.DASHBOARD} element={<DashboardPage />}/>
       </Route>
       <Route path="*" element={<NotFoundPage />}/>
     </Routes>
