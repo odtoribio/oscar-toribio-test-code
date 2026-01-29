@@ -54,10 +54,10 @@ const UserPage = () => {
             onChange={handleChecked}
           />
         </label>
+        <button className='go-to-comments-btn' onClick={() => handleUserClick(user)}>
+          Go to user posts
+        </button>
       </div>
-      <button className='go-to-comments-btn' onClick={() => handleUserClick(user)}>
-        Go to user posts
-      </button>
     </div>
   )
 }
